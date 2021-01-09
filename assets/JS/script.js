@@ -40,6 +40,21 @@ function generatePassword(){
   // Ask user to confirm if they would like to use numbers
   var useNumbers = confirm("Would you like to include numbers in your new password?");
   console.log(useNumbers);
+
+   //Build the user response array for password keys
+   if (useSpecialChar == true){
+    passwordArray.push(specialChar);
+  }
+  if (useUpperCase == true) {
+    passwordArray.push(upperChar);
+  }
+  if (useLowerCase == true) {
+    passwordArray.push(lowerChar);
+  }
+  if (useNumbers == true) {
+    passwordArray.push(numericChar);
+  }
+
   
 
   
@@ -63,20 +78,7 @@ function generatePassword(){
   
   // Take user responses and generate a random password 
   
-  //Build the user response array for password keys
-  if (useSpecialChar = true){
-    passwordArray.push(specialChar);
-  }
-  if (useUpperCase = true) {
-    passwordArray.push(upperChar);
-  }
-  if (useLowerCase = true) {
-    passwordArray.push(lowerChar);
-  }
-  if (useNumbers = true) {
-    passwordArray.push(numericChar);
-  }
-
+ 
   // Create a loop for the length of the password using random values from thechosen criteria 
   
   for (let i=0; i < finalPasswordLength; i ++){
