@@ -17,9 +17,15 @@ function writePassword() {
   passwordText.value = password;
 
   function generatePassword(){
-    // Ask user how many characters they would like their password to be
-    var passwordLength = prompt ("How many characters do you want your new password to be? Enter a value between '8' and '128'.\nPlease read through the following prompts and make at least one selection to continue.");
+    // Ask user how many characters they would like their password to be set this to an integer so we can validate that we have a number value.
+    var passwordLength = parseINT(prompt ("How many characters do you want your new password to be? Enter a value between '8' and '128'.\nPlease read through the following prompts and make at least one selection to continue."));
     console.log(passwordLength);
+
+      // Create loop to validate password length
+      while(passwordLength < 8 || passwordLength > 128 || typeof(passwordLength) != "number" || passwordLength === null || passwordLength === NaN){
+        window.alert("Pick a number between '8' and '128' and type it in below, only numeric responses are accepted.");
+        passwordLength = parseINT(prompt ("How many characters do you want your new password to be? Enter a value between '8' and '128'.\nPlease read through the following prompts and make at least one selection to continue."));
+      }
     // Ask user to confirm if they would like to use special characters
     var useSpecialChar = confirm("Would you like to include special characters?");
     console.log(useSpecialChar);
@@ -33,8 +39,25 @@ function writePassword() {
     var useNumbers = confirm("Would you like to include numbers in your new password?");
     console.log(useNumbers);
     
-    // Create loop to validate password length and set this value as our value for our password generator function for password length.
+  
+    
     // Create loop to vaildate user responses and prompt user to make at least one choice to continue.
+    while(useSpecialChar == false && useUpperCase == false && useLowerCase == false && useNumbers == false) {
+      window.alert("Please select one of the following to continue.");
+      // Ask user to confirm if they would like to use special characters
+      useSpecialChar = confirm("Would you like to include special characters?");
+      console.log(useSpecialChar);
+      // Ask user to confirm if they would like to use upper case letters
+      useUpperCase = confirm("Would you like to inlcude uppercase letters in your new password?");
+      console.log(useUpperCase);
+      // Ask user to confirm if they would like to use lower case letters
+      useLowerCase = confirm("Would you like to include lowercase letters in your new password?");
+      console.log(useLowerCase);
+      // Ask user to confirm if they would like to use numbers
+      useNumbers = confirm("Would you like to include numbers in your new password?");
+      console.log(useNumbers);
+      
+    }
     
     
     // Take user responses and generate a random password 
