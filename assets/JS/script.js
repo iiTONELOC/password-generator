@@ -25,7 +25,7 @@ function generatePassword(){
 
 
     // Create loop to validate password length
-    while(finalPasswordLength < 8 || finalPasswordLength > 128 || typeof(finalPasswordLength) != "number" || finalPasswordLength === null || finalPasswordLength === NaN){
+    while(finalPasswordLength < 8 || finalPasswordLength > 128 || typeof(finalPasswordLength) != "number" || finalPasswordLength === null || finalPasswordLength === NaN);{
       window.alert("Pick a number between '8' and '128' and type it in below, only numeric responses are accepted.");
       finalPasswordLength = parseInt(prompt ("How many characters do you want your new password to be? Enter a value between '8' and '128'.\nPlease read through the following prompts and make at least one selection to continue."));
     }
