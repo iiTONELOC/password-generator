@@ -83,19 +83,16 @@ function generatePassword(){
     let randomPassNum;
     let selectedCaseArray;
     let randomIndexNumber;
-    let randomChar;
+    let randomPass;
 
     randomPassNum = parseInt(Math.floor(Math.random()*passwordArray.length));
     selectedCaseArray = passwordArray[randomPassNum];
     randomIndexNumber = Math.floor(Math.random()*selectedCaseArray.length);
-    randomChar = selectedCaseArray[randomIndexNumber];
+    randomPass = selectedCaseArray[randomIndexNumber];
     
-    userPassword += randomChar
-   
-
-
-
-}
+    userPassword += randomPass
+  }
+  
 // Write password to the #password input
 function writePassword() {
 document.getElementById('password').innerHTML = userPassword;
