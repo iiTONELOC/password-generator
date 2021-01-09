@@ -16,17 +16,17 @@ generateBtn.addEventListener("click", generatePassword);
 function generatePassword(){
   let userPassword="";
   // Ask user how many characters they would like their password to be set this to an integer so we can validate that we have a number value.
-  let passwordLength = prompt ("How many characters do you want your new password to be? Enter a value between '8' and '128'.\nPlease read through the following prompts and make at least one selection to continue.");
-  console.log(passwordLength);
+  let finalPasswordLength = parseInt(prompt("How many characters do you want your new password to be? Enter a value between '8' and '128'.\nPlease read through the following prompts and make at least one selection to continue."));
+  
 
-  let finalPasswordLength = parseInt(passwordLength);
+ 
   console.log(finalPasswordLength);
 
 
     // Create loop to validate password length
     while(finalPasswordLength < 8 || finalPasswordLength > 128 || typeof(finalPasswordLength) != "number" || finalPasswordLength === null || finalPasswordLength === NaN){
       window.alert("Pick a number between '8' and '128' and type it in below, only numeric responses are accepted.");
-      passwordLength = prompt ("How many characters do you want your new password to be? Enter a value between '8' and '128'.\nPlease read through the following prompts and make at least one selection to continue.");
+      finalPasswordLength = parseInt(prompt ("How many characters do you want your new password to be? Enter a value between '8' and '128'.\nPlease read through the following prompts and make at least one selection to continue."));
     }
   // Ask user to confirm if they would like to use special characters
   var useSpecialChar = confirm("Would you like to include special characters?");
