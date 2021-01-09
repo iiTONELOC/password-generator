@@ -14,6 +14,7 @@ var generateBtn = document.querySelector("#generate");
 generateBtn.addEventListener("click", generatePassword);
 
 function generatePassword(){
+  let passwordArray=[];
   let userPassword="";
   // Ask user how many characters they would like their password to be set this to an integer so we can validate that we have a number value.
   let finalPasswordLength = parseInt(prompt("How many characters do you want your new password to be? Enter a value between '8' and '128'.\nPlease read through the following prompts and make at least one selection to continue."));
