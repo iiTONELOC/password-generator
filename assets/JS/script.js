@@ -1,21 +1,26 @@
 // Password Keys Arrays
 
-let passwordArray=[];
-let specialChar=["!","@","#","$","%","^","&","*","(",")","{","}","|","[","]",";","'",":","<",">","?","/"];
-let upperChar=["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","W","X","Y","Z"];
-let lowerChar=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-let numericChar=["1","2","3","4","5","6","7","8","9","0"];
+passwordArray=[];
+specialChar=["!","@","#","$","%","^","&","*","(",")","{","}","|","[","]",";","'",":","<",">","?","/"];
+upperChar=["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","W","X","Y","Z"];
+lowerChar=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+numericChar=["1","2","3","4","5","6","7","8","9","0"];
 
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
+// Add event listener to generate button
+generateBtn.addEventListener("click", generatePassword);
+
 function generatePassword(){
+  let userPassword="";
   // Ask user how many characters they would like their password to be set this to an integer so we can validate that we have a number value.
-  var passwordLength = prompt ("How many characters do you want your new password to be? Enter a value between '8' and '128'.\nPlease read through the following prompts and make at least one selection to continue.");
+  let passwordLength = prompt ("How many characters do you want your new password to be? Enter a value between '8' and '128'.\nPlease read through the following prompts and make at least one selection to continue.");
   console.log(passwordLength);
 
   let finalPasswordLength = parseInt(passwordLength);
+  console.log(finalPasswordLength);
 
 
     // Create loop to validate password length
@@ -72,24 +77,31 @@ function generatePassword(){
     passwordArray.push(numericChar);
   }
 
-  // Create a loop for the length of the password using the chosen criteria 
-  let userPassword = "";
+  // Create a loop for the length of the password using random values from thechosen criteria 
   
-  for (i=0; i < finalPasswordLength; i ++){
-   userPassword += passwordArray[Math.floor(Math.random() * (passwordArray.length-0)+1)];
-  }
- 
-  }
+  for (let i=0; i < finalPasswordLength; i ++){
+    let randomPassNum;
+    let selectedCaseArray;
+    let randomIndexNumber;
+    let randomChar;
+
+    randomPassNum = parseInt(Math.floor(Math.random()*passwordArray.length));
+    selectedCaseArray = passwordArray[randomPassNum];
+    randomIndexNumber = Math.floor(Math.random()*selectedCaseArray.length);
+    randomChar = selectedCaseArray[randomIndexNumber];
+    
+    userPassword += randomChar
+   
 
 
+
+}
 // Write password to the #password input
 function writePassword() {
-  var password = userPassword; 
-  var passwordText = document.querySelector("#password");
-  passwordText.value = password;
+document.getElementById('password').innerHTML = userPassword;
+}
+writePassword();
+
 
   
 }
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", generatePassword);
