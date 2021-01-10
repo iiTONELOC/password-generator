@@ -16,19 +16,12 @@ generateBtn.addEventListener("click", generatePassword);
 function generatePassword(){
   let passwordArray=[];
   let userPassword="";
-  // Ask user how many characters they would like their password to be set this to an integer so we can validate that we have a number value.
-  let finalPasswordLength = parseInt(prompt("How many characters do you want your new password to be? Enter a value between '8' and '128'.\nPlease read through the following prompts and make at least one selection to continue."));
-  
-
  
-  console.log(finalPasswordLength);
+ 
 
 
-    // Create loop to validate password length
-    while(finalPasswordLength < 8 || finalPasswordLength > 128 || typeof(finalPasswordLength) != "number" || finalPasswordLength === null || finalPasswordLength === NaN);{
-      window.alert("Pick a number between '8' and '128' and type it in below, only numeric responses are accepted.");
-      finalPasswordLength = parseInt(prompt ("How many characters do you want your new password to be? Enter a value between '8' and '128'.\nPlease read through the following prompts and make at least one selection to continue."));
-    }
+  window.alert("Welcome to Password Generator. Select your password requirements from the following windows.")
+  
   // Ask user to confirm if they would like to use special characters
   var useSpecialChar = confirm("Would you like to include special characters?");
   console.log(useSpecialChar);
@@ -75,13 +68,24 @@ function generatePassword(){
     // Ask user to confirm if they would like to use numbers
     useNumbers = confirm("Would you like to include numbers in your new password?");     
   }
+
+  // Ask user how many characters they would like their password to be set this to an integer so we can validate that we have a number value.
+  var finalPasswordLength = parseInt(prompt("How many characters do you want your new password to be? Enter a number between '8' and '128'."));
+  console.log (typeof finalPasswordLength);
+  console.log (finalPasswordLength);
   
+   while ( finalPasswordLength < 8 ||finalPasswordLength  > 128 || typeof finalPasswordLength  != "number" || finalPasswordLength == null || finalPasswordLength == NaN) {
+  finalPasswordLength = parseInt(prompt("Please choose a vaild response.\nHow many characters would you like your new password to be?\nEnter a number between '8' and '128'."));
+ };
   
   // Take user responses and generate a random password 
   
  
   // Create a loop for the length of the password using random values from thechosen criteria 
+
+    
   
+
   for (let i=0; i < finalPasswordLength; i ++){
     let randomPassNum;
     let selectedCaseArray;
@@ -94,14 +98,15 @@ function generatePassword(){
     randomPass = selectedCaseArray[randomIndexNumber];
     
     userPassword += randomPass
-  }
+  
+
+}
   
 // Write password to the #password input
 function writePassword() {
 document.getElementById('password').innerHTML = userPassword;
 }
 writePassword();
-
+}
 
   
-}
