@@ -2,7 +2,7 @@
 ## Password Generator 
 is a random password generator that will generate a password based upon selected user criteria. 
 # Usage
-![Password Generator Screenshot]
+![Password Generator Screenshot](https://github.com/iiTONELOC/password-generator/blob/main/assets/Images/password-generator.gif)
 
  1. Visit [Password Generator](https://iitoneloc.github.io/password-generator/) to begin generating your own random passwords. 
  1. Click on the red _'Generate Password'_ button to begin.
