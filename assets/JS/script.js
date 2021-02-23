@@ -24,16 +24,16 @@ function generatePassword(){
   
   // Ask user to confirm if they would like to use special characters
   var useSpecialChar = confirm("Would you like to include special characters?");
-  console.log(useSpecialChar);
+  // console.log(useSpecialChar);
   // Ask user to confirm if they would like to use upper case letters
-  var useUpperCase = confirm("Would you like to inlcude uppercase letters in your new password?");
-  console.log(useUpperCase);
+  var useUpperCase = confirm("Would you like to include uppercase letters in your new password?");
+  // console.log(useUpperCase);
   // Ask user to confirm if they would like to use lower case letters
   var useLowerCase = confirm("Would you like to include lowercase letters in your new password?");
-  console.log(useLowerCase);
+  // console.log(useLowerCase);
   // Ask user to confirm if they would like to use numbers
   var useNumbers = confirm("Would you like to include numbers in your new password?");
-  console.log(useNumbers);
+  // console.log(useNumbers);
 
    //Build the user response array for password keys
    if (useSpecialChar == true){
@@ -60,7 +60,7 @@ function generatePassword(){
     useSpecialChar = confirm("Would you like to include special characters?");
     
     // Ask user to confirm if they would like to use upper case letters
-    useUpperCase = confirm("Would you like to inlcude uppercase letters in your new password?");
+    useUpperCase = confirm("Would you like to include uppercase letters in your new password?");
     
     // Ask user to confirm if they would like to use lower case letters
     useLowerCase = confirm("Would you like to include lowercase letters in your new password?");
@@ -71,17 +71,17 @@ function generatePassword(){
 
   // Ask user how many characters they would like their password to be set this to an integer so we can validate that we have a number value.
   var finalPasswordLength = parseInt(prompt("How many characters do you want your new password to be? Enter a number between '8' and '128'."));
-  console.log (typeof finalPasswordLength);
-  console.log (finalPasswordLength);
+  // console.log (typeof finalPasswordLength);
+  // console.log (finalPasswordLength);
   
    while ( finalPasswordLength < 8 ||finalPasswordLength  > 128 || typeof finalPasswordLength  != "number" || finalPasswordLength == null || finalPasswordLength == NaN) {
-  finalPasswordLength = parseInt(prompt("Please choose a vaild response.\nHow many characters would you like your new password to be?\nEnter a number between '8' and '128'."));
+  finalPasswordLength = parseInt(prompt("Please choose a valid response.\nHow many characters would you like your new password to be?\nEnter a number between '8' and '128'."));
  };
   
   // Take user responses and generate a random password 
   
  
-  // Create a loop for the length of the password using random values from thechosen criteria 
+  // Create a loop for the length of the password using random values from the chosen criteria 
 
     
   
